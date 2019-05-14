@@ -7,4 +7,5 @@
    * go to browser and type "http://localhost:8000/cars/" to see the car lists.
    * go to browser and type "http://localhost:8000/showrooms/" to see the showroom lists.
    * go to browser and type "http://localhost:8000/manufactor/" to see the Manufactor lists.
+   * go to browser and type "http://localhost:8000/showrooms_wise_car/" to see Showroom wise car lists.
    * go to browser and type "http://localhost:8000/users/" to see the User lists.
