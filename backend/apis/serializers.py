@@ -15,5 +15,9 @@ class CarSerializer(serializers.ModelSerializer):
     showroom = ShowroomSerializer()
     class Meta:
         model = Car
-        fields = ('image','mileage','model','showroom','manufactor')
+        fields = ('id','image','mileage','model','showroom','manufactor')
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id','name','email')
