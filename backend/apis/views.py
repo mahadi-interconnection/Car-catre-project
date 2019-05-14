@@ -1,7 +1,18 @@
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import (
+    viewsets,
+    generics
+)
 from .models import Manufactor,Showroom,Car,User
-from .serializers import ManufactorSerializer,CarSerializer,ShowroomSerializer,UserSerializer,CarSerializerBasic
+from .serializers import (
+    ManufactorSerializer,
+    CarSerializer,
+    ShowroomSerializer,
+    UserSerializer,
+    CarSerializerBasic,
+    ShowroomWiseCarSerializer
+)    
+
 
 # Create your views here.
 
@@ -26,4 +37,11 @@ class CarView(viewsets.ModelViewSet):
 
 class UserView(viewsets.ModelViewSet):
     queryset = User.objects.all()
-    serializer_class = UserSerializer       
+    serializer_class = UserSerializer
+
+class ShowroomWiseView(generics.ListAPIView):
+    serializer_class = ShowroomWiseCarSerializer
+    def get_queryset(self):
+        return Showroom.objects.all()
+
+        

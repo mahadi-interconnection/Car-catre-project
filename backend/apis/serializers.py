@@ -11,12 +11,28 @@ class ShowroomSerializer(serializers.ModelSerializer):
         model = Showroom
         fields = ('id','name')        
 
-class CarSerializer(serializers.ModelSerializer):
-    showroom = ShowroomSerializer()
+
+
+
+class CarLiteSerializer(serializers.ModelSerializer):
+    # showroom = ShowroomSerializer()
     manufactor = ManufactorSerializer()
     class Meta:
         model = Car
         fields = ('id','image','mileage','model','showroom','manufactor')
+
+
+class CarSerializer(CarLiteSerializer):
+    showroom = ShowroomSerializer()
+    
+
+class ShowroomWiseCarSerializer(serializers.ModelSerializer):
+    car_showroom=CarLiteSerializer(many=True)
+    class Meta:
+        model = Showroom
+        fields = ('id','name', 'car_showroom')
+
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
