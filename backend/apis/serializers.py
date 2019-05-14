@@ -13,6 +13,7 @@ class ShowroomSerializer(serializers.ModelSerializer):
 
 class CarSerializer(serializers.ModelSerializer):
     showroom = ShowroomSerializer()
+    manufactor = ManufactorSerializer()
     class Meta:
         model = Car
         fields = ('id','image','mileage','model','showroom','manufactor')
@@ -21,3 +22,9 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id','name','email')
+
+# added
+class CarSerializerBasic(serializers.ModelSerializer):
+    class Meta:
+        model = Car
+        fields = ('id','image','mileage','model','showroom','manufactor')        
