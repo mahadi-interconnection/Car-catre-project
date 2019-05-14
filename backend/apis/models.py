@@ -5,7 +5,10 @@ transmission_choices = [
 ("Automatic","Automatic")
 ]
 
-
+# status_choice = [
+#     ("sold","sold"),
+#     ("In stock","In stock")
+# ]
 
 # Create your models here.
 class Manufactor(models.Model):

@@ -6,12 +6,14 @@ class ManufactorSerializer(serializers.ModelSerializer):
         model = Manufactor
         fields = ('id' , 'name')
 
+class ShowroomSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Showroom
+        fields = ('id','name')        
+
 class CarSerializer(serializers.ModelSerializer):
+    showroom = ShowroomSerializer()
     class Meta:
         model = Car
         fields = ('image','mileage','model','showroom','manufactor')
 
-class ShowroomSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Showroom
-        fields = ('id','name')
