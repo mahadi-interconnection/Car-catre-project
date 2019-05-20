@@ -1,19 +1,39 @@
-# from django.contrib import admin
-from django.urls import path,include
-from . import views
-from rest_framework import routers
+from django.conf.urls import url, include
+from rest_framework.urlpatterns import format_suffix_patterns
+from .views import (
+    ManufactorCreateView,
+    ManufactorDetailsView,
+    ShowroomCreateView,
+    ShowroomDetailsView,
+    UserCreateView,
+    UserDetailsView,
+    CarCreateView,
+    CarDetailsView,
+    ShowroomWiseView,
 
-router = routers.DefaultRouter()
+    )
 
-router.register('cars',views.CarView)
-router.register('showrooms',views.ShowroomView)
-# router.register('showrooms_wise_car',views.ShowroomWiseView)
-router.register('manufactor',views.ManufactorView)
-router.register('showroomwisecars',views.UserView)
-router.register('users',views.UserView)
+urlpatterns = {
+    url(r'^manufactor/$', 
+        ManufactorCreateView.as_view(), name="create"),
+    url(r'^manufactor/(?P<pk>[0-9]+)/$',
+        ManufactorDetailsView.as_view(), name="details"),
+    url(r'^showrooms/$', 
+        ShowroomCreateView.as_view(), name="create"),
+    url(r'^showrooms/(?P<pk>[0-9]+)/$',
+        ShowroomDetailsView.as_view(), name="details"),  
+    url(r'^users/$', 
+        UserCreateView.as_view(), name="create"),
+    url(r'^users/(?P<pk>[0-9]+)/$',
+        UserDetailsView.as_view(), name="details"),  
+    url(r'^cars/$', 
+        CarCreateView.as_view(), name="create"),
+    url(r'^cars/(?P<pk>[0-9]+)/$',
+        CarDetailsView.as_view(), name="details"),
+    url(r'^showroomwisecar/$', 
+        ShowroomWiseView.as_view(), name="car_showroom"),    
 
-urlpatterns = [
-    path('', include(router.urls)),
-    path(r'showrooms_wise_car/', views.ShowroomWiseView.as_view(), name='user-list')
 
-]
+}
+
+urlpatterns = format_suffix_patterns(urlpatterns)
