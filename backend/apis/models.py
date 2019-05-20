@@ -1,41 +1,32 @@
 from django.db import models
 
+
 # Create your models here.
+
+# manufactor model
+class NameBasedModel(models.Model):
+    name = models.CharField(max_length=50)
+    class Meta:
+        abstract = True        
 
 
 # manufactor model
-class Manufactor(models.Model):
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.name
+class Manufactor(NameBasedModel):
+    pass
 
 # Manufactor Model model
-class ManufactorModel(models.Model):
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.name 
+class ManufactorModel(NameBasedModel):
+    pass
 
 # Showroom model
-class Showroom(models.Model):
-    name = models.CharField(max_length = 100)
+class Showroom(NameBasedModel):
     logo = models.ImageField(upload_to='all_image',blank= 'True')
 
-    def __str__(self):
-        return self.name          
-
 #User model
-class User(models.Model):
-    name =  models.CharField(max_length = 100)
+class User(NameBasedModel):
     email = models.CharField(max_length = 100)   
 
-    def __str__(self):
-        return self.name          
-
 # Car model
-
-
 transmission_choices = [
     ("Manual","Manual"),
     ("Automatic","Automatic")

@@ -102,6 +102,5 @@ class CarDetailsView(generics.RetrieveUpdateDestroyAPIView):
 
 class ShowroomWiseView(generics.ListAPIView):
     serializer_class = ShowroomWiseCarSerializer
-    def get_queryset(self):
-        return Showroom.objects.all()
+    queryset=Showroom.objects.all()
     
