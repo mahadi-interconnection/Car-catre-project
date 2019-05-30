@@ -1,0 +1,90 @@
+// /*
+//  * SLIPlay Styles
+//  * Based on: Bootstrap v4.1.3 (https://getbootstrap.com)
+//  */
+
+// // Bootstrap 4 dependencies
+// @import "node_modules/bootstrap/scss/functions";
+
+// // Variables
+// @import "variables";
+
+// // Extended
+// @import "extended/custom-colors";
+
+// // Extended
+// // @import "extended/demo";
+// @import "extended/extended_utilities";
+// @import "extended/navbar";
+// @import "extended/input-styling";
+// @import "extended/page-heading";
+// @import "extended/side-scrolling";
+// @import "extended/skip-link";
+// @import "extended/table-styling";
+// @import "extended/icon-styling";
+
+// // Core
+// @import "mixins";
+
+// @import "root";
+// @import "reboot";
+// @import "type";
+// @import "images";
+// @import "code";
+// @import "tables";
+// @import "forms";
+// @import "buttons";
+// @import "transitions";
+
+// //  Components
+// @import "icons";
+// @import "dropdown";
+// @import "button-group";
+// @import "input-group";
+// @import "custom-forms";
+// @import "nav";
+// @import "navbar";
+// @import "card";
+// @import "pagination";
+// @import "badge";
+// @import "jumbotron";
+// @import "alert";
+// @import "progress";
+// @import "list-group";
+// @import "close";
+// @import "modal";
+// @import "tooltip";
+// @import "popover";
+// @import "carousel";
+// @import "custom-sliders";
+// @import "custom-datepicker";
+// @import "utilities";
+// @import "spinners";
+.text-primary {
+    color: #bf1200;
+}
+
+.coupon-box {
+    height: 380px !important;
+
+    .sub-title {
+        margin: 0 0 16px;
+    }
+}
+
+.auto-grid-item-image-container {
+    max-height: 200px;
+}
+
+.auto-grid-item-image {
+    // height: 177px;
+    object-fit: fill;
+}
+
+.widget h3.heading4:before {
+    border:none;
+}
+
+.widget h3.heading4:after {
+    border:none;
+}
